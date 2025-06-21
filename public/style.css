@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ad-container {
+  width: 160px;
+  min-height: 600px;
+  margin: 0 20px;
+}
+
+.main-content {
+  flex-grow: 1;
+  max-width: 800px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2em;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.container h1 {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.key-combo-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.key-combo-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.input-wrapper {
+  position: relative;
+  margin: 20px 0;
+}
+
+#keyInput {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#keyInput:focus {
+  outline: none;
+  border-color: #4ecdc4;
+  background: white;
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.5);
+}
+
+.input-focus-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+}
+
+#keyInput:focus + .input-focus-indicator {
+  opacity: 0.1;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin: 10px 0;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.status-indicator {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.status-indicator.success {
+  background: rgba(76, 175, 80, 0.3);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.error {
+  background: rgba(244, 67, 54, 0.3);
+  border: 1px solid rgba(244, 67, 54, 0.5);
+}
+
+.btn-start {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  margin: 20px 0;
+  opacity: 0.6;
+}
+
+.btn-start:enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn-start:enabled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-start:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.guide-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.guide-container h2 {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.guide-container h4 {
+  color: #667eea;
+  margin: 25px 0 15px 0;
+  font-size: 1.2em;
+}
+
+.guide-container ol {
+  text-align: left;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.guide-container li {
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.guide-container a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.guide-container a:hover {
+  color: #4ecdc4;
+  text-decoration: underline;
+}
+
+.guide-container strong {
+  color: #ff6b6b;
+}
+
+/* Animation for status updates */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.status-indicator.updated {
+  animation: pulse 0.5s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+  
+  .ad-container {
+    width: 100%;
+    min-height: 90px;
+    margin: 10px 0;
+  }
+  
+  .container, .guide-container {
+    margin: 10px;
+    padding: 1.5em;
+  }
+}
+
+/* Remove video-specific styles */
+#updateVideo { display: none; }
+
+/* New styles for the update simulation */
+.update-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  z-index: 1;
+}
+
+/* Final, definitive implementation with unique animations per dot */
+.spinner {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.spinner div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Restore elastic movement with a curve that minimizes the end-of-loop pause */
+  animation-name: spinner-dot-1; /* Will be overridden per child */
+  animation-duration: 3.2s; /* Slightly adjusted duration */
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-iteration-count: infinite;
+}
+
+.spinner div:after {
+  content: " ";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Assign unique animation and staggered delay to each dot */
+.spinner div:nth-child(1) { animation-name: spinner-dot-1; animation-delay: -0.1s; }
+.spinner div:nth-child(2) { animation-name: spinner-dot-2; animation-delay: -0.2s; }
+.spinner div:nth-child(3) { animation-name: spinner-dot-3; animation-delay: -0.3s; }
+.spinner div:nth-child(4) { animation-name: spinner-dot-4; animation-delay: -0.4s; }
+.spinner div:nth-child(5) { animation-name: spinner-dot-5; animation-delay: -0.5s; }
+.spinner div:nth-child(6) { animation-name: spinner-dot-6; animation-delay: -0.6s; }
+
+/* Unique Keyframes for each dot to prevent overlap */
+@keyframes spinner-dot-1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spinner-dot-2 { from { transform: rotate(24deg); } to { transform: rotate(384deg); } }
+@keyframes spinner-dot-3 { from { transform: rotate(48deg); } to { transform: rotate(408deg); } }
+@keyframes spinner-dot-4 { from { transform: rotate(72deg); } to { transform: rotate(432deg); } }
+@keyframes spinner-dot-5 { from { transform: rotate(96deg); } to { transform: rotate(456deg); } }
+@keyframes spinner-dot-6 { from { transform: rotate(120deg); } to { transform: rotate(480deg); } }
+
+.update-text {
+  text-align: center;
+}
+
+.update-text h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+.update-text p {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.start-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  user-select: none;
+} 
